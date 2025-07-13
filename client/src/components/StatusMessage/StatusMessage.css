@@ -1,0 +1,22 @@
+.status-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-elevated);
+  color: var(--primary-text);
+  border: 2px solid var(--highlight);
+  border-radius: 10px;
+  padding: 0.7em 2em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+  z-index: 1000;
+  opacity: 0.97;
+  animation: status-fadein 0.3s;
+}
+
+@keyframes status-fadein {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px);}
+  to { opacity: 0.97; transform: translateX(-50%) translateY(0);}
+}

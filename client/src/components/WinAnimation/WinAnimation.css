@@ -1,0 +1,36 @@
+.win-animation {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  pointer-events: none;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.win-text-glow {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    0 0 12px #E63946,
+    0 0 24px #F1C40F,
+    0 0 36px #4DA8DA,
+    0 0 48px #fff;
+  animation: win-pop 1.2s cubic-bezier(.4,2,.6,1) forwards, win-fadeout 1s 4s forwards;
+  background: linear-gradient(90deg, #E63946 0%, #F1C40F 50%, #4DA8DA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+@keyframes win-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes win-fadeout {
+  to { opacity: 0; }
+}

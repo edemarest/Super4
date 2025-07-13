@@ -1,0 +1,132 @@
+.player-cards-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.player-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 180px;
+  min-height: 90px;
+  position: relative;
+  border: 1.5px solid var(--border);
+  transition: box-shadow 0.15s, border 0.15s;
+}
+
+/* Only the player whose turn it is gets a bright outline and glow */
+.player-card.active {
+  border: 2.5px solid var(--highlight);
+  box-shadow: 0 0 24px 4px var(--highlight);
+  z-index: 1;
+}
+
+/* No outline for .me unless also .active */
+.player-card.me:not(.active) {
+  border: 1.5px solid var(--player1-color);
+  box-shadow: var(--shadow);
+}
+
+/* Ensure all cards are the same size */
+.player-card,
+.player-card.active,
+.player-card.me {
+  min-height: 90px;
+  min-width: 180px;
+  padding: 1rem 2rem;
+}
+
+.player-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-token);
+  background: #444;
+  color: var(--primary-text);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.15);
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.player-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: var(--primary-text);
+}
+
+.player-wins {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+}
+
+.player-turn-badge {
+  margin-top: 0.3em;
+  background: var(--success);
+  color: var(--surface);
+  font-size: 0.85em;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.2em 0.7em;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+}
+
+.player-vs {
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--highlight);
+  margin: 0 1.2rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .player-cards-row {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .player-card,
+  .player-card.active,
+  .player-card.me {
+    min-width: 80px;
+    max-width: 110px;
+    min-height: 48px;
+    padding: 0.4rem 0.5rem;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .player-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  .player-info {
+    font-size: 0.9rem;
+  }
+  .player-vs {
+    font-size: 1.1rem;
+    margin: 0 0.4rem;
+  }
+}
+

@@ -1,0 +1,139 @@
+/* Vibrant Connect 4 Theme - Dark Mode */
+:root {
+  /* Core Palette */
+  --background: #121212;
+  --surface: #1E1E1E;
+  --surface-elevated: #262626;
+  --primary-text: #FFFFFF;
+  --secondary-text: #BBBBBB;
+  --border: #333333;
+  --player1-color: #E63946;
+  --player2-color: #F1C40F;
+  --highlight: #4DA8DA;
+  --success: #2ECC71;
+  --danger: #E74C3C;
+  --shadow: 0 4px 12px rgba(0,0,0,0.6);
+
+  /* Component Radii */
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-token: 50%;
+
+  /* Board */
+  --board-bg: #1A1A1A;
+  --token-empty: #555555;
+}
+
+/* General body styles */
+body {
+  background: var(--background);
+  color: var(--primary-text);
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Utility classes */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+.player-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.5rem;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+.player-card.active {
+  background: var(--highlight);
+  color: var(--primary-text);
+  box-shadow: 0 0 16px 2px var(--player1-color);
+}
+
+.spectator-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.board-container {
+  background: var(--board-bg);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-primary {
+  background: var(--highlight);
+  color: var(--primary-text);
+  border: none;
+  border-radius: var(--radius-button);
+  padding: 0.7em 1.5em;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.15s, color 0.15s;
+}
+.button-primary:hover {
+  background: var(--player1-color);
+  color: var(--primary-text);
+}
+
+.text-highlight {
+  color: var(--highlight);
+  font-weight: bold;
+}
+
+.text-muted {
+  color: var(--secondary-text);
+}
+
+@media (max-width: 700px) {
+  .board-container {
+    padding: 0.5rem;
+  }
+  .player-card {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem 0.8rem;
+  }
+  .spectator-card {
+    padding: 0.5rem 0.6rem;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .board-container {
+    padding: 0.5rem;
+  }
+  .player-card {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem 0.8rem;
+  }
+  .spectator-card {
+    padding: 0.5rem 0.6rem;
+    gap: 0.5rem;
+  }
+}

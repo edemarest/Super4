@@ -1,0 +1,177 @@
+.spectator-bar {
+  width: 220px;
+  min-width: 160px;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  margin: 2rem 1.5rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+}
+
+.spectator-bar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: var(--highlight);
+  text-align: center;
+}
+
+.spectator-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.spectator-empty {
+  color: var(--secondary-text);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.spectator-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  border: 1.5px solid var(--border);
+  transition: box-shadow 0.15s, border 0.15s;
+}
+
+.spectator-card.up-next {
+  border: 2px solid var(--highlight);
+}
+
+.spectator-card.me {
+  border: 2px solid var(--player1-color);
+}
+
+.spectator-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-token);
+  background: #444;
+  color: var(--primary-text);
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+}
+
+.spectator-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.spectator-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.spectator-wins {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+
+.spectator-upnext-badge {
+  margin-top: 0.2em;
+  background: var(--highlight);
+  color: var(--surface);
+  font-size: 0.8em;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.15em 0.6em;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+}
+
+@media (max-width: 900px) {
+  .spectator-bar {
+    width: 100vw;
+    min-width: 0;
+    margin: 0 0 1rem 0;
+    border-radius: 0 0 16px 16px;
+    flex-direction: row;
+    max-height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .spectator-list {
+    flex-direction: row;
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .spectator-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    min-width: 0;
+    margin: 0;
+    border-radius: 0;
+    flex-direction: row;
+    max-height: 56px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: var(--surface-elevated);
+    z-index: 100;
+    box-shadow: 0 -2px 12px 0 rgba(0,0,0,0.25);
+    padding: 0.3rem 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .spectator-bar-title,
+  .spectator-info,
+  .spectator-name,
+  .spectator-wins,
+  .spectator-upnext-badge {
+    display: none !important;
+  }
+  .spectator-list {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+  .spectator-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    gap: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spectator-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    background: #444;
+    border: 2px solid var(--border);
+    margin: 0 2px;
+  }
+  .spectator-card.up-next .spectator-avatar {
+    border: 2px solid var(--highlight);
+  }
+  .spectator-card.me .spectator-avatar {
+    border: 2px solid var(--player1-color);
+  }
+}
